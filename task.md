@@ -1,8 +1,7 @@
-# Tarefas - Fase 1: Auditoria e Infraestrutura Base
+# Tarefas - Fase 2: Motor Editorial e Mock Data (Estático)
 
-- [x] Inicializar projeto React + Vite + TypeScript.
-- [x] Instalar e configurar Tailwind CSS (com suporte a paleta editorial).
-- [x] Configurar ESLint e Prettier.
-- [x] Criar estrutura base de pastas (`src/components`, `src/pages`, `src/content`, `src/seo`, `src/config`).
-- [x] Configurar paths absolutos (`@/`) no `tsconfig.json` e `vite.config.ts`.
-- [x] Commit e push das configurações da Fase 1 na branch `devlab`.
+- [x] Definição das tipagens TypeScript (`Article`, `Author`, `Category`, `SEOData`).
+- [x] Criação de dados de mock de Categorias (`src/data/categories.ts`).
+- [x] Criação de perfis de autores estáticos (`src/data/authors.ts`).
+- [x] Geração de artigos DEMO simulando conteúdo real (`src/data/articles.ts`).
+- [x] Criação do helper para carregamento/simulação do conteúdo (`src/lib/content.ts`).
