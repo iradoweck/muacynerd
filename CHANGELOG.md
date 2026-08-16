@@ -47,3 +47,14 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Configured `AnalyticsTracker` in `App.tsx` to automatically record SPA pageviews using React Router's `useLocation`.
   - Added `public/robots.txt` for crawler guidance.
   - Implemented `scripts/generate-sitemap.js` to dynamically generate `sitemap.xml` based on mock CMS data, and hooked it into the npm `prebuild` step.
+- **Phase 6**: CI/CD and Rebranding:
+  - Added GitHub Actions workflow (`.github/workflows/ci.yml`) for automated build, linting, and deployment to GitHub Pages.
+  - Rebranded project from LIBRIVAS to MuacyNerd across configuration, domains, text, and assets.
+  - Configured CI concurrency settings for dynamic cancellation on PRs to optimize runner usage.
+- **Phase 7**: Search, Pagination, and Dark Mode:
+  - Created `src/hooks/useTheme.ts` to manage light/dark mode preference via local storage and system media queries.
+  - Refactored `src/index.css` to use CSS variables mapped to `:root` and `:root[data-theme="dark"]` for dynamic theming.
+  - Updated `<Header />` to include a Theme toggle and a Search link.
+  - Created `src/pages/SearchView.tsx` for real-time text-based search across articles.
+  - Implemented "Load More" pagination in `<CategoryView />` and `<SearchView />` using `visibleCount` state.
+  - Removed placeholder articles, leaving only a single AI-related article for production readiness.
