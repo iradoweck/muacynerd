@@ -30,8 +30,8 @@ export const Header: React.FC = () => {
 
           {/* Logo Clássico */}
           <div className="flex-shrink-0 flex items-center justify-center md:justify-start w-full md:w-auto">
-            <Link to="/" className="font-serif text-3xl md:text-4xl font-black text-editorial-primary tracking-tighter hover:text-editorial-accent transition-colors">
-              LIBRIVAS<span className="text-editorial-accent">.</span>
+            <Link to="/" className="flex items-center justify-center md:justify-start">
+              <img src="/logo.png" alt="MuacyNerd" className="h-8 md:h-10 w-auto object-contain" />
             </Link>
           </div>
 

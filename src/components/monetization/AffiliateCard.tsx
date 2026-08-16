@@ -20,7 +20,7 @@ export const AffiliateCard: React.FC<AffiliateCardProps> = ({
       </div>
       <div className="sm:w-2/3 flex flex-col justify-between">
         <div>
-          <span className="text-xs text-editorial-accent font-semibold uppercase tracking-wider">Recomendação LIBRIVAS</span>
+          <span className="text-xs text-editorial-accent font-semibold uppercase tracking-wider">Recomendação MuacyNerd</span>
           <h3 className="text-lg font-bold mt-1 text-editorial-primary line-clamp-2">{title}</h3>
           <p className="text-sm text-editorial-secondary mt-2 line-clamp-3">{description}</p>
         </div>

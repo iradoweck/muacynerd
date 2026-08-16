@@ -6,6 +6,7 @@ import { getArticleBySlug, getCategoryById, getAuthorById } from '@/lib/content'
 // but for simplicity we can just receive the slug as a prop or use the hook directly.
 import { useParams, Navigate } from 'react-router-dom'
 import { AdSlot } from '@/components/monetization/AdSlot'
+import { SEO } from '@/components/ui/SEO'
 
 export const ArticleView: React.FC = () => {
   const { slug } = useParams<{ slug: string }>()
@@ -24,8 +25,32 @@ export const ArticleView: React.FC = () => {
     year: 'numeric'
   })
 
+  const articleSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'NewsArticle',
+    headline: article.title,
+    image: [article.coverImage],
+    datePublished: article.publishedAt,
+    dateModified: article.publishedAt,
+    author: [{
+      '@type': 'Person',
+      name: author?.name || 'Redação MuacyNerd'
+    }]
+  }
+
   return (
     <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
+      <SEO 
+        title={article.title} 
+        description={article.excerpt} 
+        image={article.coverImage} 
+        type="article"
+        author={author?.name}
+        publishedTime={article.publishedAt}
+        url={`https://muacynerd.net/artigo/${article.slug}`}
+        structuredData={articleSchema}
+      />
+
       {category && (
         <div className="flex items-center gap-4 mb-8">
           <span className="w-12 h-0.5 bg-editorial-accent"></span>

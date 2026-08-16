@@ -2,6 +2,7 @@ import React from 'react'
 import { NewsCard } from '@/components/content/NewsCard'
 import { AdSlot } from '@/components/monetization/AdSlot'
 import { getAllArticles } from '@/lib/content'
+import { SEO } from '@/components/ui/SEO'
 
 export const Home: React.FC = () => {
   const articles = getAllArticles()
@@ -12,6 +13,8 @@ export const Home: React.FC = () => {
 
   return (
     <main className="flex-grow max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 w-full">
+      <SEO title="MuacyNerd" type="website" url="https://muacynerd.net/" />
+
       {/* Banner Publicitário */}
       <AdSlot slot="header" className="mb-12 h-24 border-2 border-editorial-primary bg-white flex items-center justify-center text-editorial-secondary font-bold" />
 

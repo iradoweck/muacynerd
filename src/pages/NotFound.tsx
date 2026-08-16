@@ -1,9 +1,11 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import { SEO } from '@/components/ui/SEO'
 
 export const NotFound: React.FC = () => {
   return (
     <main className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-32 flex flex-col items-center justify-center text-center min-h-[60vh]">
+      <SEO title="Página Não Encontrada - 404" />
       <h1 className="text-9xl font-serif font-black text-editorial-accent leading-none mb-6">404</h1>
       <h2 className="text-3xl md:text-5xl font-serif font-bold text-editorial-primary mb-8">
         Página Não Encontrada

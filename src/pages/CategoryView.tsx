@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import { getArticlesByCategory, getAllCategories } from '@/lib/content'
 import { NewsCard } from '@/components/content/NewsCard'
+import { SEO } from '@/components/ui/SEO'
 
 export const CategoryView: React.FC = () => {
   const { slug } = useParams<{ slug: string }>()
@@ -16,6 +17,11 @@ export const CategoryView: React.FC = () => {
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
+      <SEO 
+        title={`${category.name} | MuacyNerd`}
+        description={category.description || `Leia as últimas notícias sobre ${category.name}`}
+        url={`https://muacynerd.net/categoria/${category.slug}`}
+      />
       <div className="mb-16 border-b-[3px] border-editorial-primary pb-8">
         <h1 className="text-6xl md:text-8xl font-serif font-black text-editorial-primary uppercase tracking-tighter">
           {category.name}

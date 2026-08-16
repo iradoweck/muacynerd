@@ -1,32 +1,71 @@
-# React + TypeScript + Vite
+# MuacyNerd - Premium Editorial Portal
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+MuacyNerd is a high-craft, SPA (Single Page Application) editorial news portal built for optimal readability, premium aesthetics, and lightning-fast navigation.
 
-Currently, two official plugins are available:
+## 🚀 Tech Stack
+- **Framework**: React 19 + Vite
+- **Routing**: React Router v7
+- **Styling**: Tailwind CSS v4
+- **Typography**: Playfair Display (Serif) & DM Sans (Sans-serif)
+- **Icons**: Lucide React
+- **SEO & Meta**: React Helmet Async
+- **Type Checking**: TypeScript (Strict Mode)
+- **Linting & Formatting**: Oxlint & Prettier
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+## 🛠 Getting Started
 
-## React Compiler
+### Prerequisites
+Make sure you have [Node.js](https://nodejs.org/) installed on your machine.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+### Installation
+1. Clone the repository and navigate into it:
+   ```bash
+   git clone <repository-url>
+   cd librivas
+   ```
+2. Install the required dependencies:
+   ```bash
+   npm install
+   ```
+3. Set up the environment variables (optional for local dev):
+   ```bash
+   cp .env.example .env
+   ```
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
-
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
+### Running Locally
+To spin up the local Vite development server:
+```bash
+npm run dev
 ```
+The application will be accessible at `http://localhost:5173`.
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+### Building for Production
+To build the application for deployment (which also automatically generates the `sitemap.xml`):
+```bash
+npm run build
+```
+The production-ready assets will be located in the `dist/` directory.
+
+## 🏗 Architecture & Content
+
+MuacyNerd uses a decoupled UI architecture. Rather than relying on a heavy backend during initial setup, it uses a mock CMS engine built into `src/lib/content.ts`.
+
+### How to Add Content
+Currently, data is served from local static files. To add or modify content without breaking the application, follow the structured types in `src/types/index.ts`:
+
+- **Categories**: Edit `src/data/categories.ts`.
+- **Authors**: Edit `src/data/authors.ts`.
+- **Articles**: Edit `src/data/articles.ts`. 
+
+The SPA routing automatically creates pages for any new category or article you add!
+
+## ⚙️ Features
+- **Editorial Premium Design**: High contrast typography, robust border usage, and careful whitespace matching print publications.
+- **Instant SPA Navigation**: Powered by `react-router-dom`, meaning zero page reloads when navigating between articles.
+- **Advanced Technical SEO**: Fully configured `<head>` tags per view, JSON-LD Schema integration for Google rich snippets, and dynamic Open Graph images.
+- **Automated Sitemap**: A `prebuild` hook extracts all existing slugs and automatically generates a valid `sitemap.xml`.
+- **Analytics Ready**: Centralized tracking structure in `src/lib/analytics.ts` ready to digest GA4 and Meta Pixel IDs.
+
+---
+
+> Built with precision in the **devlab**.

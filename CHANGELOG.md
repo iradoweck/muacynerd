@@ -1,6 +1,6 @@
-# Changelog - LIBRIVAS
+# Changelog - MuacyNerd
 
-All notable changes to the LIBRIVAS project will be documented in this file.
+All notable changes to the MuacyNerd project will be documented in this file.
 
 The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/), and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
 
@@ -39,3 +39,11 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - Created `src/pages/CategoryView.tsx` (Dynamic category listing with fallback for empty states).
   - Created `src/pages/NotFound.tsx` (Custom editorial 404 page).
   - Refactored UI components (`Header`, `Footer`, `NewsCard`) to use `<Link>` for instantaneous navigation.
+- **Phase 5**: Advanced Technical SEO and Analytics:
+  - Installed `react-helmet-async` for dynamic metadata management.
+  - Created reusable `<SEO />` utility component supporting basic tags, Open Graph, Twitter Cards, and JSON-LD schema (Article and Breadcrumb).
+  - Integrated static and dynamic `<SEO />` tags across all application views (`Home`, `ArticleView`, `CategoryView`, `NotFound`).
+  - Created `src/lib/analytics.ts` module with placeholder logic for Google Analytics 4 (GA4) and Meta Pixel.
+  - Configured `AnalyticsTracker` in `App.tsx` to automatically record SPA pageviews using React Router's `useLocation`.
+  - Added `public/robots.txt` for crawler guidance.
+  - Implemented `scripts/generate-sitemap.js` to dynamically generate `sitemap.xml` based on mock CMS data, and hooked it into the npm `prebuild` step.

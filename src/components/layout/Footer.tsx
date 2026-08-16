@@ -8,8 +8,8 @@ export const Footer: React.FC = () => {
         <div className="grid grid-cols-1 md:grid-cols-12 gap-12 border-b border-white/20 pb-16">
           
           <div className="md:col-span-5">
-            <Link to="/" className="block font-serif text-6xl md:text-7xl font-black tracking-tighter mb-6 text-white hover:text-editorial-accent transition-colors">
-              LIBRIVAS<span className="text-editorial-accent">.</span>
+            <Link to="/" className="block mb-6">
+              <img src="/logo v.png" alt="MuacyNerd" className="h-16 md:h-20 w-auto object-contain" />
             </Link>
             <p className="text-base text-gray-400 max-w-md font-sans leading-relaxed">
               Jornalismo digital independente. Exploramos as fronteiras da ciência, tecnologia, cultura pop e a revolução da inteligência artificial.
@@ -47,7 +47,7 @@ export const Footer: React.FC = () => {
         </div>
         
         <div className="pt-8 flex flex-col md:flex-row justify-between items-center text-xs font-bold tracking-widest uppercase text-gray-500">
-          <p>&copy; {new Date().getFullYear()} LIBRIVAS EDITORIAL. TODOS OS DIREITOS RESERVADOS.</p>
+          <p>&copy; {new Date().getFullYear()} MUACYNERD EDITORIAL. TODOS OS DIREITOS RESERVADOS.</p>
           <div className="mt-6 md:mt-0 flex space-x-8">
             <a href="#" className="hover:text-editorial-accent transition-colors">Twitter</a>
             <a href="#" className="hover:text-editorial-accent transition-colors">Instagram</a>
