@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
-import { Menu, Search, X } from 'lucide-react'
+import { Menu, Search, X, Moon, Sun } from 'lucide-react'
+import { useTheme } from '@/hooks/useTheme'
 
 export const Header: React.FC = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false)
+  const { theme, toggleTheme } = useTheme()
 
   const navLinks = [
     { label: 'Ciência', href: '/categoria/ciencia' },
@@ -49,11 +51,18 @@ export const Header: React.FC = () => {
             ))}
           </nav>
 
-          {/* Search */}
-          <div className="flex items-center space-x-4">
-            <button className="text-editorial-primary hover:text-editorial-accent transition-colors p-2" aria-label="Pesquisar">
-              <Search size={22} strokeWidth={2.5} />
+          {/* Search & Theme Toggle */}
+          <div className="flex items-center space-x-2 md:space-x-4">
+            <button 
+              onClick={toggleTheme}
+              className="text-editorial-primary hover:text-editorial-accent transition-colors p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" 
+              aria-label="Alternar tema"
+            >
+              {theme === 'dark' ? <Sun size={22} strokeWidth={2.5} /> : <Moon size={22} strokeWidth={2.5} />}
             </button>
+            <Link to="/pesquisa" className="text-editorial-primary hover:text-editorial-accent transition-colors p-2 rounded-full hover:bg-black/5 dark:hover:bg-white/5" aria-label="Pesquisar">
+              <Search size={22} strokeWidth={2.5} />
+            </Link>
           </div>
         </div>
       </div>

@@ -2,14 +2,28 @@
 
 @import "tailwindcss";
 
+:root {
+  --bg-color: #F7F7F5;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --accent-color: #E3342F;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #111111;
+  --text-primary: #F7F7F5;
+  --text-secondary: #AAAAAA;
+  --accent-color: #E3342F;
+}
+
 @theme {
   --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
   --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
   
-  --color-editorial-primary: #111111;
-  --color-editorial-secondary: #555555;
-  --color-editorial-accent: #E3342F;
-  --color-editorial-bg: #F7F7F5;
+  --color-editorial-primary: var(--text-primary);
+  --color-editorial-secondary: var(--text-secondary);
+  --color-editorial-accent: var(--accent-color);
+  --color-editorial-bg: var(--bg-color);
 }
 
 @layer base {

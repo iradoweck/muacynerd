@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import { getArticlesByCategory, getAllCategories } from '@/lib/content'
 import { NewsCard } from '@/components/content/NewsCard'
@@ -14,6 +14,13 @@ export const CategoryView: React.FC = () => {
   }
 
   const articles = getArticlesByCategory(category.id)
+  
+  const [visibleCount, setVisibleCount] = useState(6)
+  const hasMore = visibleCount < articles.length
+  
+  const loadMore = () => {
+    setVisibleCount(prev => prev + 6)
+  }
 
   return (
     <main className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
@@ -40,11 +47,24 @@ export const CategoryView: React.FC = () => {
           </p>
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {articles.map(article => (
-            <NewsCard key={article.id} article={article} />
-          ))}
-        </div>
+        <>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {articles.slice(0, visibleCount).map(article => (
+              <NewsCard key={article.id} article={article} />
+            ))}
+          </div>
+          
+          {hasMore && (
+            <div className="mt-16 flex justify-center border-t border-editorial-primary/10 pt-12">
+              <button 
+                onClick={loadMore}
+                className="px-10 py-4 border-[3px] border-editorial-primary text-editorial-primary font-bold tracking-widest uppercase hover:bg-editorial-primary hover:text-editorial-bg transition-colors"
+              >
+                Carregar Mais Artigos
+              </button>
+            </div>
+          )}
+        </>
       )}
     </main>
   )

@@ -5,6 +5,7 @@ import { Footer } from '@/components/layout/Footer'
 import { Home } from '@/pages/Home'
 import { ArticleView } from '@/pages/ArticleView'
 import { CategoryView } from '@/pages/CategoryView'
+import { SearchView } from '@/pages/SearchView'
 import { NotFound } from '@/pages/NotFound'
 import { pageView } from '@/lib/analytics'
 
@@ -30,6 +31,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/artigo/:slug" element={<ArticleView />} />
           <Route path="/categoria/:slug" element={<CategoryView />} />
+          <Route path="/pesquisa" element={<SearchView />} />
           <Route path="*" element={<NotFound />} />
         </Routes>
 
