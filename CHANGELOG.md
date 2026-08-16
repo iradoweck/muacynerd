@@ -24,3 +24,18 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.0.0/),
   - `src/data/authors.ts`: 3 mock journalist profiles.
   - `src/data/articles.ts`: 5 DEMO articles across different categories.
 - Content helper library (`src/lib/content.ts`) simulating CMS functionality (fetch by slug, category, featured, etc.).
+- **Phase 3**: Core UI components & Design System implemented (Editorial Premium Redesign):
+  - Installed `lucide-react` for iconography.
+  - Ads configuration system (`src/config/ads.ts`).
+  - Layout components: `<Header />` (responsive navbar, thick borders) and `<Footer />` (high contrast, minimal).
+  - Base UI components: `<Breadcrumbs />`, `<Tag />`.
+  - Content components: `<NewsCard />` (supports full, compact, and featured grid views).
+  - Monetization components: `<AdSlot />`, `<AffiliateCard />`, `<SponsoredBadge />`.
+- **Phase 4**: Routing and Single Page Application (SPA) architecture:
+  - Installed `react-router-dom` for client-side routing.
+  - Setup `<BrowserRouter>` and primary `<Routes>` in `App.tsx`.
+  - Created `src/pages/Home.tsx` (Grid-based editorial layout).
+  - Created `src/pages/ArticleView.tsx` (Immersive reading view with dynamic content fetching).
+  - Created `src/pages/CategoryView.tsx` (Dynamic category listing with fallback for empty states).
+  - Created `src/pages/NotFound.tsx` (Custom editorial 404 page).
+  - Refactored UI components (`Header`, `Footer`, `NewsCard`) to use `<Link>` for instantaneous navigation.
