@@ -1,0 +1,37 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400..800;1,9..40,400..800&family=Playfair+Display:ital,wght@0,400..900;1,400..900&display=swap');
+
+@import "tailwindcss";
+
+:root {
+  --bg-color: #F7F7F5;
+  --text-primary: #111111;
+  --text-secondary: #555555;
+  --accent-color: #E3342F;
+}
+
+:root[data-theme="dark"] {
+  --bg-color: #111111;
+  --text-primary: #F7F7F5;
+  --text-secondary: #AAAAAA;
+  --accent-color: #E3342F;
+}
+
+@theme {
+  --font-sans: 'DM Sans', ui-sans-serif, system-ui, sans-serif;
+  --font-serif: 'Playfair Display', ui-serif, Georgia, serif;
+  
+  --color-editorial-primary: var(--text-primary);
+  --color-editorial-secondary: var(--text-secondary);
+  --color-editorial-accent: var(--accent-color);
+  --color-editorial-bg: var(--bg-color);
+}
+
+@layer base {
+  body {
+    @apply bg-editorial-bg text-editorial-primary font-sans antialiased selection:bg-editorial-accent selection:text-white;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif tracking-tight text-editorial-primary;
+  }
+}

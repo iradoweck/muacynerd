@@ -22,17 +22,3 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
-
-# Env
-.env
-.env.*
-!.env.example
-
-# Caches
-.eslintcache
-.tsbuildinfo
-.vite/
-
-# Agent Configs
-.system_generated/
-.gemini/
